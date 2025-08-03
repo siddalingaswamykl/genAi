@@ -4,7 +4,7 @@ services:
     image: postgres:15-alpine
     restart: always
     environment:
-      POSTGRES_DB: vehicle_genai
+      POSTGRES_DB: vehicle
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: adminpass
     ports:
@@ -13,9 +13,7 @@ services:
       - db_data:/var/lib/postgresql/data
 
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
+    image: backendimage:latest
     depends_on:
       - db
     environment:
@@ -26,9 +24,7 @@ services:
       - "3001:3001"
 
   frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile.frontend
+    image: frontendimage:latest
     ports:
       - "3000:3000"
     environment:

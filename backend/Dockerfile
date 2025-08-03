@@ -1,9 +1,9 @@
-FROM node:20-alpine
+FROM node:22.17.1-alpine
 
 WORKDIR /app
-COPY backend/package*.json ./
+COPY package*.json ./
 RUN npm install
-COPY backend/. .
+COPY . .
 RUN npm run build
 
 EXPOSE 3001

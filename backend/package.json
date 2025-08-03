@@ -8,14 +8,15 @@
     "build": "tsc",
     "dev": "ts-node-dev src/index.ts"
   },
-"dependencies": {
+  "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^4.19.0",
-    "sequelize": "^6.35.1",
     "pg": "^8.11.3",
-    "dotenv": "^16.5.0"
+    "sequelize": "^6.35.1"
   },
   "devDependencies": {
-    "typescript": "^5.5.0",
-    "ts-node-dev": "^2.0.0"
+    "@types/express": "^5.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.0"
   }
 }
